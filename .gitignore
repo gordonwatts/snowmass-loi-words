@@ -123,3 +123,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Ignore other things
+.venv*/
+notebooks/*.png
+notebooks/loi-text/**
