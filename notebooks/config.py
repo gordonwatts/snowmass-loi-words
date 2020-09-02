@@ -27,4 +27,4 @@ extra_stopwords = ['high', 'energy', 'physics', 'beam', 'beams',
                    'one', 'two', 'within', 'several', 'may',
                    'arxiv', 'hep', 'astro', 'letter',
                    'provide', 'new', 'jhep', 'ph', 'need',
-                   'study', 'https', 'http', 'ii']
+                   'study', 'https', 'http', 'ii', 'david']
