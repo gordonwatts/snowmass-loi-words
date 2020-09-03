@@ -5,7 +5,7 @@
 
     div.tooltip {
         position: absolute;
-        text-align: center;
+        text-align: left;
         background-color: white;
         border: solid 2px;
         border-radius: 5px;
@@ -54,10 +54,24 @@
       svg.append("g")
         .call(d3.axisLeft(y));
 
+      // Names of the frontiers for people like me who can't keep track of them all:
+      var frontiers = {
+        "AF": "Accelerator",
+        "CF": "Cosmic",
+        "CommF": "Community Engagement",
+        "CompF": "Computational",
+        "EF": "Energy",
+        "IF": "Instrumentation",
+        "NF": "Neutrino Physics",
+        "RF": "Rare Processes and Precision",
+        "TF": "Theory",
+        "UF": "Underground Facilities"
+      }
+
       // Color scale: give me a specie name, I return a color
       var color = d3.scaleOrdinal()
-        .domain(["setosa", "versicolor", "virginica" ])
-        .range([ "#440154ff", "#21908dff", "#fde725ff"])
+        .domain(["AF", "CF", "CommF", "CompF", "EF", "IF", "NF", "RF", "TF", "UF" ])
+        .range(["#A2BA83",  "#639F82", "#3E3F3E", "#94544B", "#BE0A27", "#07A2C7", "#D2A26D", "#C2B257", "#A8A148", "#F08012"])
 
       // Create the tool tip that we'll use to display info
       var Tooltip = d3.select("body").append("div")
@@ -71,7 +85,7 @@
 
         // Get a little blob of info text
         Tooltip
-          .html("Name: " + d.name)
+          .html(d.name + "<br>Frontier: " + frontiers[d.area])
           .style("opacity", 1)
           .style("left", (d3.event.pageX) + "px")
           // NB: offset in y so it doesn't cover the data point and trigger a mouseout event
