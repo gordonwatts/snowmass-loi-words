@@ -1,0 +1,127 @@
+
+<!-- Code from d3-graph-gallery.com -->
+<!DOCTYPE html>
+<head></head>
+<body>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+<script>
+
+// set the dimensions and margins of the graph
+var margin = {top: 50, right: 30, bottom: 50, left: 60},
+    width = window.innerWidth - margin.left - margin.right - 100,
+    height = window.innerHeight - margin.top - margin.bottom - 100;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+//Read the data
+d3.csv("loi-data.csv", function(data) {
+
+  // Add X axis
+  var x = d3.scaleLinear()
+    .domain([-0.4, 0.6])
+    .range([ 0, width ]);
+  svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x));
+
+  // Add Y axis
+  var y = d3.scaleLinear()
+    .domain([-0.4, 0.6])
+    .range([ height, 0]);
+  svg.append("g")
+    .call(d3.axisLeft(y));
+
+  // Color scale: give me a specie name, I return a color
+  var color = d3.scaleOrdinal()
+    .domain(["setosa", "versicolor", "virginica" ])
+    .range([ "#440154ff", "#21908dff", "#fde725ff"])
+
+  // Create the tool tip that we'll use to display info
+  var Tooltip = svg.append('g')
+    .append("div")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("background-color", "white")
+    .style("border", "solid")
+    .style("border-width", "2px")
+    .style("border-radius", "5px")
+    .style("padding", "5px")
+
+  // Call back when we mouse over an area - high light everything from that area
+  var highlight = function(d){
+
+    selected_area = d.area
+
+    // Get a little blob of info text
+    Tooltip
+      .style("opacity", 1)
+
+    // Turn them all to gray
+    d3.selectAll(".dot")
+      .transition()
+      .duration(200)
+      .style("fill", "lightgrey")
+      .attr("r", 3)
+
+    // For the ones with our color, turn them bigger so they are easy to spot
+    d3.selectAll("." + selected_area)
+      .transition()
+      .duration(200)
+      .style("fill", color(selected_area))
+      .attr("r", 7)
+  }
+
+  // Ok - turn off the highlighting
+  var doNotHighlight = function(){
+
+    Tooltip
+      .style("opacity", 0)
+
+    d3.selectAll(".dot")
+      .transition()
+      .duration(200)
+      .style("fill", function (d) { return color(d.area) })
+      .attr("r", 5 )
+  }
+
+  var mousemove = function(d) {
+    Tooltip
+      .html("Name: " + d.name)
+      .style("left", x(d3.mouse(this)[0]) + "px")
+      .style("top", y(d3.mouse(this)[1]) + "px")
+    console.log(d.name)
+  }
+
+  // Add dots
+  svg.append('g')
+    .selectAll("dot")
+    .data(data)
+    .enter()
+    .append("circle")
+      .attr("class", d => "dot + " + d.area)
+      .attr("cx", function (d) { return x(d.x); } )
+      .attr("cy", function (d) { return y(d.y); } )
+      .attr("r", 5)
+      .style("fill", function (d) { return color(d.area) } )
+    .on("mouseover", highlight)
+    .on("mouseleave", doNotHighlight)
+    .on("mousemove", mousemove)
+
+})
+
+</script>
+</body>

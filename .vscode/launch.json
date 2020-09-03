@@ -1,0 +1,16 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-msedge",
+            "request": "launch",
+            "url": "http://localhost:8080/scatter.html",
+            "name": "Open scatter.html",
+            "webRoot": "${workspaceFolder}/web/scatter"
+            // "file": "${workspaceFolder}\\web\\scatter\\scatter.html"
+        }
+    ]
+}
