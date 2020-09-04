@@ -13,7 +13,7 @@ The number of LOI's per self declared frontier:
 ## Detailed Information
 
 - All At Once: All 1500 LOI's represented on a single 2D plot, color coded by frontier. Hovering gets you the name and a 100 word summary. Clicking will open a new tab loading the LOI's PDF.
-- Wordclouds for all LOI's and for each Frontier
+- [Word clouds](wordcloud) for all LOI's and for each Frontier
 
 ## Credits
 
