@@ -1,9 +1,10 @@
 {
     "debug.javascript.usePreview": true,
     "cSpell.words": [
+        "Snowmass",
         "dataviz",
         "setosa",
-        "virginica",
-        "Snowmass"
+        "stopwords",
+        "virginica"
     ]
 }
