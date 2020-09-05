@@ -1,5 +1,0 @@
-name: Transfer over Web Files
-
-on:
-  push:
-
