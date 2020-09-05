@@ -59,11 +59,12 @@ def word_vectors(filenames: Iterable[str], do_idf: bool = True) -> Tuple[Any, Tf
     
     - Removes the standard english stop words and the list of `extra_stopwords` above.
     - Ignores numbers
-    - Ignores unicode characters (greek letters will get ignored)
     - Words must appear in at least 2 documents if they are to make this list
     - If a word appears in 50% of the documents, then it does not make this list.
     - Word must be at least 3 letters long
     - Word importance is the standard IDF (https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+    
+    If the above gets changed, also update the word_list_template.md document.
     '''
     stopwords = list(_check_stop_list('english')) + extra_stopwords
     vectorizer = TfidfVectorizer(input='filename',
