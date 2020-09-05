@@ -1,10 +1,15 @@
 {
     "debug.javascript.usePreview": true,
     "cSpell.words": [
+        "COVID",
+        "LOI's",
+        "PDF's",
         "Snowmass",
         "dataviz",
+        "peaceiris",
         "setosa",
         "stopwords",
-        "virginica"
+        "virginica",
+        "wordcloud"
     ]
 }
