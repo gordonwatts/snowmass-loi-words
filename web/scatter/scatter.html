@@ -80,7 +80,7 @@
         .attr("class", "tooltip");
 
       // Call back when we mouse over an area - high light everything from that area
-      var highlight = function(d){
+      var highlight = function(d) {
 
         selected_area = d.area
 
@@ -124,24 +124,22 @@
 
       var doClick = function(d) {
         window.open(d.url)
-        console.log("opening " + d.url)
       };
 
-      // Add dots
+      // Add dots, one for each data point
       svg.append('g')
         .selectAll("dot")
         .data(data)
         .enter()
         .append("circle")
           .attr("class", d => "dot + " + d.area)
-          .attr("cx", function (d) { return x(d.x); } )
-          .attr("cy", function (d) { return y(d.y); } )
+          .attr("cx", d => x(d.x) )
+          .attr("cy", d => y(d.y) )
           .attr("r", 5)
-          .style("fill", function (d) { return color(d.area) } )
+          .style("fill", d => color(d.area) )
         .on("mouseenter", highlight)
         .on("click", doClick)
         .on("mouseleave", doNotHighlight);
-
     })
 
     </script>
