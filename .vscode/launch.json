@@ -4,13 +4,12 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
-            "type": "pwa-msedge",
-            "request": "launch",
-            "url": "http://localhost:8080/scatter.html",
-            "name": "Open scatter.html",
-            "webRoot": "${workspaceFolder}/web/scatter"
-            // "file": "${workspaceFolder}\\web\\scatter\\scatter.html"
-        }
+    {
+        "name": "Launch Site",
+        "request": "launch",
+        "type": "pwa-msedge",
+        "url": "http://localhost:4000",
+        "webRoot": "${workspaceFolder}/web/_site"
+    },
     ]
 }
