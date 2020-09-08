@@ -128,3 +128,10 @@ dmypy.json
 .venv*/
 notebooks/*.png
 notebooks/loi-text/**
+
+# Local web running stuff
+web/_site
+web/.jekyll-cache
+vendor
+web/.jekyll-metadata
+web/.sass-cache
