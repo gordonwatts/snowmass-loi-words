@@ -18,7 +18,7 @@
     <!-- Create a div where the graph will take place -->
     <div id="my_dataviz"></div>
 
-    <input id="search" style="visibility: hidden;"/>
+    <input id="search" style="visibility: hidden;" placeholder="Single Word Search Term"/>
 
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
@@ -34,6 +34,7 @@
       .domain(["AF", "CF", "CommF", "CompF", "EF", "IF", "NF", "RF", "TF", "UF" ])
       .range(["#A2BA83",  "#639F82", "#3E3F3E", "#94544B", "#BE0A27", "#07A2C7", "#D2A26D", "#C2B257", "#A8A148", "#F08012"])
 
+    // Gets us back to "ground zero"
     function reset_colors() {
       d3.selectAll(".dot")
           .transition()
@@ -41,6 +42,15 @@
           .style("fill", function (d) { return color(d.area) })
           .attr("r", 5 )
     }
+
+    // State of the page:
+    // 0 - Mouse over should work as normal
+    // 1 - Valid search term: mouse over disabled.
+    state = 0
+
+    // if this list is empty, display tool tips for everything. Otherwise, just for
+    // the index in this list
+    tool_tip_only_documents = []
 
     // append the svg object to the body of the page
     var svg = d3.select("#my_dataviz")
@@ -95,41 +105,44 @@
         selected_area = d.area
 
         // Get a little blob of info text
-        Tooltip
-          .html(d.name + "<br>Click for PDF<br>Frontier: " + frontiers[d.area] + "<br>" + d.summary)
-          .style("opacity", 1)
-          .style("display", "inline")
-          .style("left", (d3.event.pageX + 20) + "px")
-          // NB: offset in y so it doesn't cover the data point and trigger a mouseout event
-          .style("top", (d3.event.pageY - 50) + "px");
+        if (tool_tip_only_documents.length == 0 || tool_tip_only_documents.indexOf(d.index) > 0){
+          Tooltip
+            .html(d.name + "<br>Click for PDF<br>Frontier: " + frontiers[d.area] + "<br>" + d.summary)
+            .style("opacity", 1)
+            .style("display", "inline")
+            .style("left", (d3.event.pageX + 20) + "px")
+            // NB: offset in y so it doesn't cover the data point and trigger a mouseout event
+            .style("top", (d3.event.pageY - 50) + "px");
+        }
 
-        // Turn them all to gray
-        d3.selectAll(".dot")
-          .transition()
-          .duration(200)
-          .style("fill", "lightgrey")
-          .attr("r", 3);
+        if (state == 0) {
+          // Turn them all to gray
+          d3.selectAll(".dot")
+            .transition()
+            .duration(200)
+            .style("fill", "lightgrey")
+            .attr("r", 3);
 
-        // For the ones with our color, turn them bigger so they are easy to spot
-        d3.selectAll("." + selected_area)
-          .transition()
-          .duration(200)
-          .style("fill", color(selected_area))
-          .attr("r", 7);
+          // For the ones with our color, turn them bigger so they are easy to spot
+          d3.selectAll("." + selected_area)
+            .transition()
+            .duration(200)
+            .style("fill", color(selected_area))
+            .attr("r", 7);
+        }
       };
 
       // Ok - turn off the highlighting
       var doNotHighlight = function(){
-
+        // Tool tip
         Tooltip
           .style("opacity", 0)
           .style("display", "none")
 
-        d3.selectAll(".dot")
-          .transition()
-          .duration(200)
-          .style("fill", function (d) { return color(d.area) })
-          .attr("r", 5 )
+        // Reset the dots to their "normal" state
+        if (state == 0) {
+          reset_colors()
+        }
       };
 
       var doClick = function(d) {
@@ -159,9 +172,16 @@
       function lookup_keyword() {
         word = this.value
         if (data[word]) {
-          ids = {1400: 1, 500: 1, 1000: 1, 150: 0.5};
+          // Shift state so that we are correctly tracking the marked dots
+          state = 1
+
+          // highlight the dots for each word
+          ids = data[word];
+          tool_tip_only_documents = Object.keys(ids)
 
           d3.selectAll(".dot")
+            .transition()
+            .duration(200)
             .style("fill", d => {
               if (ids[d.index]) {
                 return color(d.area)
@@ -178,7 +198,12 @@
             })
 
         } else {
-          reset_colors()
+          // No longer looking at a good search. Make sure it is disabled.
+          if (state == 1) {
+            reset_colors()
+            tool_tip_only_documents = []
+            state = 0
+          }
         }
       }
 
