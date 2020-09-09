@@ -170,7 +170,7 @@
 
       // User has entered something. Highlight if we know it
       function lookup_keyword() {
-        word = this.value
+        word = this.value.toLowerCase()
         if (data[word]) {
           // Shift state so that we are correctly tracking the marked dots
           state = 1
