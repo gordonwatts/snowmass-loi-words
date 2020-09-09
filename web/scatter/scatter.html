@@ -18,6 +18,8 @@
     <!-- Create a div where the graph will take place -->
     <div id="my_dataviz"></div>
 
+    <input id="search" style="visibility: hidden;"/>
+
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
     <script type="text/javascript">
@@ -36,7 +38,7 @@
         .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
 
-    //Read the data
+    //Read the scatter plot data
     d3.csv("../data/loi-data.csv", function(data) {
 
       // Add X axis
@@ -136,10 +138,46 @@
           .attr("cx", d => x(d.x) )
           .attr("cy", d => y(d.y) )
           .attr("r", 5)
+          .attr("id", d => "#paperdot-" + d.index)
           .style("fill", d => color(d.area) )
         .on("mouseenter", highlight)
         .on("click", doClick)
         .on("mouseleave", doNotHighlight);
+    })
+
+    // Load in the term data to power search
+    d3.json('../data/term_data.json', function (data) {
+
+      // User has entered something. Highlight if we know it
+      function lookup_keyword() {
+        word = this.value
+        if (data[word]) {
+          ids = [1, 2, 3, 4];
+
+          // Turn them all grey
+          d3.selectAll(".dot")
+            .transition()
+            .duration(200)
+            .style("fill", "lightgrey")
+            .attr("r", 3);
+
+          for (i of ids) {
+            d3.select("#paperdot-" + i)
+              .transition()
+              .duration(200)
+              .style("fill", d => color(d.area))
+              .attr("r", 5)
+          };
+
+          console.log('got it');
+        } else {
+          console.log('nope: ' + word)
+        }
+      }
+
+      d3.select("#search")
+        .style("visibility", "visible" )
+        .on("input", lookup_keyword)
     })
 
     </script>
