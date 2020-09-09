@@ -29,6 +29,19 @@
         width = window.innerWidth - margin.left - margin.right - 100,
         height = window.innerHeight - margin.top - margin.bottom - 100;
 
+    // Color scale: give me a specie name, I return a color
+    var color = d3.scaleOrdinal()
+      .domain(["AF", "CF", "CommF", "CompF", "EF", "IF", "NF", "RF", "TF", "UF" ])
+      .range(["#A2BA83",  "#639F82", "#3E3F3E", "#94544B", "#BE0A27", "#07A2C7", "#D2A26D", "#C2B257", "#A8A148", "#F08012"])
+
+    function reset_colors() {
+      d3.selectAll(".dot")
+          .transition()
+          .duration(200)
+          .style("fill", function (d) { return color(d.area) })
+          .attr("r", 5 )
+    }
+
     // append the svg object to the body of the page
     var svg = d3.select("#my_dataviz")
       .append("svg")
@@ -69,11 +82,6 @@
         "TF": "Theory",
         "UF": "Underground Facilities"
       }
-
-      // Color scale: give me a specie name, I return a color
-      var color = d3.scaleOrdinal()
-        .domain(["AF", "CF", "CommF", "CompF", "EF", "IF", "NF", "RF", "TF", "UF" ])
-        .range(["#A2BA83",  "#639F82", "#3E3F3E", "#94544B", "#BE0A27", "#07A2C7", "#D2A26D", "#C2B257", "#A8A148", "#F08012"])
 
       // Create the tool tip that we'll use to display info
       var Tooltip = d3.select("body").append("div")
@@ -138,7 +146,6 @@
           .attr("cx", d => x(d.x) )
           .attr("cy", d => y(d.y) )
           .attr("r", 5)
-          .attr("id", d => "#paperdot-" + d.index)
           .style("fill", d => color(d.area) )
         .on("mouseenter", highlight)
         .on("click", doClick)
@@ -152,26 +159,26 @@
       function lookup_keyword() {
         word = this.value
         if (data[word]) {
-          ids = [1, 2, 3, 4];
+          ids = {1400: 1, 500: 1, 1000: 1, 150: 0.5};
 
-          // Turn them all grey
           d3.selectAll(".dot")
-            .transition()
-            .duration(200)
-            .style("fill", "lightgrey")
-            .attr("r", 3);
+            .style("fill", d => {
+              if (ids[d.index]) {
+                return color(d.area)
+              } else {
+                return "lightgrey"
+              }
+            })
+            .attr("r", d => {
+              if (ids[d.index]) {
+                return 7
+              } else {
+                return 3
+              }
+            })
 
-          for (i of ids) {
-            d3.select("#paperdot-" + i)
-              .transition()
-              .duration(200)
-              .style("fill", d => color(d.area))
-              .attr("r", 5)
-          };
-
-          console.log('got it');
         } else {
-          console.log('nope: ' + word)
+          reset_colors()
         }
       }
 
