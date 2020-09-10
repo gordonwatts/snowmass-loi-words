@@ -1,7 +1,9 @@
 <!-- Code from d3-graph-gallery.com -->
 <!DOCTYPE html>
 <head>
-    <style type="text/css">
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@yaireo/tagify@3.18.0/dist/tagify.css"></script> -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@yaireo/tagify@2.31.2/dist/tagify.css"></script>
+  <style type="text/css">
 
     div.tooltip {
         position: absolute;
@@ -20,6 +22,8 @@
 
     <input id="search" style="visibility: hidden;" placeholder="Single Word Search Term"/>
 
+    <!-- tagify -->
+    <script src="//cdn.jsdelivr.net/npm/@yaireo/tagify@2.31.2/dist/tagify.min.js"></script>
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
     <script type="text/javascript">
@@ -167,7 +171,6 @@
 
     // Load in the term data to power search
     d3.json('../data/term_data.json', function (data) {
-
       // User has entered something. Highlight if we know it
       function lookup_keyword() {
         word = this.value.toLowerCase()
@@ -207,9 +210,17 @@
         }
       }
 
+      item = document.querySelector('#search')
+      tagify = Tagify(item)
+
       d3.select("#search")
-        .style("visibility", "visible" )
-        .on("input", lookup_keyword)
+        .style("visibility", "visible" );
+      // d3.select("#search")
+      //   .style("visibility", "visible" )
+      //   .each(d => {
+      //     tagify = Tagify(this)
+      //   })
+      //   .on("input", lookup_keyword)
     })
 
     </script>
