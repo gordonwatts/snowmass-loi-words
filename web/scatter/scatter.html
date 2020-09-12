@@ -65,6 +65,20 @@
         .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
 
+    // Names of the frontiers for people like me who can't keep track of them all:
+    var frontiers = {
+      "AF": "Accelerator",
+      "CF": "Cosmic",
+      "CommF": "Community Engagement",
+      "CompF": "Computational",
+      "EF": "Energy",
+      "IF": "Instrumentation",
+      "NF": "Neutrino Physics",
+      "RF": "Rare Processes and Precision",
+      "TF": "Theory",
+      "UF": "Underground Facilities"
+    }
+
     //Read the scatter plot data
     d3.csv("../data/loi-data.csv", function(data) {
 
@@ -83,18 +97,13 @@
       svg.append("g")
         .call(d3.axisLeft(y));
 
-      // Names of the frontiers for people like me who can't keep track of them all:
-      var frontiers = {
-        "AF": "Accelerator",
-        "CF": "Cosmic",
-        "CommF": "Community Engagement",
-        "CompF": "Computational",
-        "EF": "Energy",
-        "IF": "Instrumentation",
-        "NF": "Neutrino Physics",
-        "RF": "Rare Processes and Precision",
-        "TF": "Theory",
-        "UF": "Underground Facilities"
+      // Keep track of what id's are what
+      frontier_ids = {}
+      for (f in frontiers) {
+        frontier_ids[f] = {}
+      }
+      for (i of data) {
+        frontier_ids[i.area][i.index] = 1.0
       }
 
       // Create the tool tip that we'll use to display info
@@ -109,7 +118,7 @@
         selected_area = d.area
 
         // Get a little blob of info text
-        if (tool_tip_only_documents.length == 0 || tool_tip_only_documents.indexOf(d.index) > 0){
+        if (tool_tip_only_documents.length == 0 || tool_tip_only_documents.indexOf(d.index) >= 0){
           Tooltip
             .html(d.name + "<br>Click for PDF<br>Frontier: " + frontiers[d.area] + "<br>" + d.summary)
             .style("opacity", 1)
@@ -175,8 +184,12 @@
       d3.select("#search")
         .style("visibility", "visible")
         .each(function () {
+          good_words = Object.keys(data)
+          for (area in frontiers) {
+            good_words.push('area_' + area)
+          }
           tagify = new Tagify(this, {
-            whitelist: Object.keys(data),
+            whitelist: good_words,
             enforceWhitelist: true,
             skipInvalid: true,
             dropdown: {
@@ -188,16 +201,25 @@
         });
 
       // When the user enters something, we can look here.
+      function get_ids(word) {
+        if (word.startsWith('area_')) {
+          area = word.substring(5)
+          return frontier_ids[area]
+        } else {
+          return data[word]
+        }
+      };
+
       function lookup_keyword() {
         ids = [];
         first = true;
         for (word of tagify.value) {
           if (first) {
             first = false
-            ids = data[word.value]
+            ids = get_ids(word.value)
           } else {
             ids_common = {}
-            for (new_id in data[word.value]) {
+            for (new_id in get_ids(word.value)) {
               if (ids[new_id]) {
                 ids_common[new_id] = ids[new_id]
               }
