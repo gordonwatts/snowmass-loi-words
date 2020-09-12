@@ -17,10 +17,10 @@
 </head>
 <body>
     <meta charset="utf-8">
+    <!-- Search box for entering search terms -->
+    <input id="search" style="visibility: hidden;" placeholder="Single Word Search Term"/>
     <!-- Create a div where the graph will take place -->
     <div id="my_dataviz"></div>
-
-    <input id="search" style="visibility: hidden;" placeholder="Single Word Search Term"/>
 
     <!-- tagify -->
     <script src="//cdn.jsdelivr.net/npm/@yaireo/tagify@2.31.2/dist/tagify.min.js"></script>
@@ -171,15 +171,45 @@
 
     // Load in the term data to power search
     d3.json('../data/term_data.json', function (data) {
-      // User has entered something. Highlight if we know it
+
+      d3.select("#search")
+        .style("visibility", "visible")
+        .each(function () {
+          tagify = new Tagify(this, {
+            whitelist: Object.keys(data),
+            enforceWhitelist: true,
+            skipInvalid: true,
+            dropdown: {
+              enabled: 1
+            }
+          });
+          tagify.on('add', lookup_keyword)
+          tagify.on('remove', lookup_keyword)
+        });
+
+      // When the user enters something, we can look here.
       function lookup_keyword() {
-        word = this.value.toLowerCase()
-        if (data[word]) {
+        ids = [];
+        first = true;
+        for (word of tagify.value) {
+          if (first) {
+            first = false
+            ids = data[word.value]
+          } else {
+            ids_common = {}
+            for (new_id in data[word.value]) {
+              if (ids[new_id]) {
+                ids_common[new_id] = ids[new_id]
+              }
+            }
+            ids = ids_common
+          }
+        }
+        if (!first) {
           // Shift state so that we are correctly tracking the marked dots
           state = 1
 
           // highlight the dots for each word
-          ids = data[word];
           tool_tip_only_documents = Object.keys(ids)
 
           d3.selectAll(".dot")
@@ -208,19 +238,7 @@
             state = 0
           }
         }
-      }
-
-      item = document.querySelector('#search')
-      tagify = Tagify(item)
-
-      d3.select("#search")
-        .style("visibility", "visible" );
-      // d3.select("#search")
-      //   .style("visibility", "visible" )
-      //   .each(d => {
-      //     tagify = Tagify(this)
-      //   })
-      //   .on("input", lookup_keyword)
+      };
     })
 
     </script>
