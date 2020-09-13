@@ -49,7 +49,14 @@
 
     // Get the screen aspect ratio. The 0.9 is to deal with all the screen chrome that might be
     // present so we don't loose the bottom.
-    aspect = screen.height/screen.width * 0.85
+    aspect_screen = screen.height/screen.width * 0.85
+    aspect_inner = window.innerHeight/window.innerWidth * 0.85
+
+    if (aspect_inner < aspect_screen) {
+      aspect = aspect_inner
+    } else {
+      aspect = aspect_screen
+    }
 
     // Set the size of the canvas on which we will be drawing this thing.
     var canvas_width = window.innerWidth
