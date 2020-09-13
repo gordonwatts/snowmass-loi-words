@@ -323,24 +323,23 @@
           tool_tip_only_documents = Object.keys(ids)
 
           d3.selectAll(".dot")
+            .filter(d => ids[d.index])
             .transition()
             .duration(200)
-            .style("fill", d => {
-              if (ids[d.index]) {
-                return color(d.area)
-              } else {
-                return "lightgrey"
-              }
-            })
-            .attr("r", d => {
-              if (ids[d.index]) {
-                return 7
-              } else {
-                return 3
-              }
+            .style("fill", d => color(d.area))
+            .attr("r", d => 7)
+            .each(function (d) {
+              this.parentElement.appendChild(this);
             })
 
-        } else {
+            d3.selectAll(".dot")
+            .filter(d => !ids[d.index])
+            .transition()
+            .duration(200)
+            .style("fill", d => "lightgrey")
+            .attr("r", d => 3)
+
+          } else {
           // No longer looking at a good search. Make sure it is disabled.
           if (state == 1) {
             reset_colors()
