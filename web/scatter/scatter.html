@@ -4,16 +4,35 @@
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@yaireo/tagify@3.18.0/dist/tagify.css"></script> -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@yaireo/tagify@2.31.2/dist/tagify.css"></script>
   <style type="text/css">
-
     div.tooltip {
-        position: absolute;
-        text-align: left;
-        background-color: white;
-        border: solid 2px;
-        border-radius: 5px;
-        padding: 5px;
+      position: absolute;
+      text-align: left;
+      background-color: white;
+      border: solid 2px;
+      border-radius: 5px;
+      padding: 5px;
     }
-    </style>
+  
+    .svg-container {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      /* padding-bottom: 70%; */
+      /* aspect ratio */
+      /* vertical-align: top; */
+      /* overflow: hidden; */
+    }
+  
+    .svg-content-responsive {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
     <meta charset="utf-8">
@@ -28,10 +47,21 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script type="text/javascript">
 
-    // set the dimensions and margins of the graph
-    var margin = {top: 50, right: 30, bottom: 50, left: 60},
-        width = window.innerWidth - margin.left - margin.right - 100,
-        height = window.innerHeight - margin.top - margin.bottom - 100;
+    // Get the screen aspect ratio. The 0.9 is to deal with all the screen chrome that might be
+    // present so we don't loose the bottom.
+    aspect = screen.height/screen.width * 0.85
+
+    // Set the size of the canvas on which we will be drawing this thing.
+    var canvas_width = window.innerWidth
+    var canvas_height = window.innerWidth * aspect
+
+    // how much space around the edges of the canvas should we allow so that
+    // axes, etc., can fit in?
+    var margin = {top: 10, right: 10, bottom: 30, left: 30}
+
+    // Computed values
+    var plot_width = canvas_width - margin.left - margin.right,
+      plot_height = canvas_height - margin.top - margin.bottom
 
     // Color scale: give me a specie name, I return a color
     var color = d3.scaleOrdinal()
@@ -57,13 +87,20 @@
     tool_tip_only_documents = []
 
     // append the svg object to the body of the page
-    var svg = d3.select("#my_dataviz")
-      .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-      .append("g")
+      var svg = d3.select("#my_dataviz")
+        .append("div")
+        // Container class to make it responsive to rescaling
+        .classed("svg-container", true)
+        .style("padding-bottom", aspect*100 + "%")
+        // The parent for the SVG
+        .append("svg")
+        .attr("viewBox", "0 0 " + canvas_width + " " + canvas_height)
+        .attr("preserveAspectRatio", "xMinYMax  slice")
+        // Class to make it responsive.
+        .classed("svg-content-responsive", true)
+        .append("g")
         .attr("transform",
-              "translate(" + margin.left + "," + margin.top + ")");
+          "translate(" + margin.left + "," + margin.top + ")");
 
     // Names of the frontiers for people like me who can't keep track of them all:
     var frontiers = {
@@ -85,15 +122,15 @@
       // Add X axis
       var x = d3.scaleLinear()
         .domain([-0.4, 0.6])
-        .range([ 0, width ]);
+        .range([ 0, plot_width ]);
       svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + plot_height + ")")
         .call(d3.axisBottom(x));
 
       // Add Y axis
       var y = d3.scaleLinear()
         .domain([-0.4, 0.6])
-        .range([ height, 0]);
+        .range([ plot_height, 0]);
       svg.append("g")
         .call(d3.axisLeft(y));
 
