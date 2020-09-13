@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <head>
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@yaireo/tagify@3.18.0/dist/tagify.css"></script> -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@yaireo/tagify@2.31.2/dist/tagify.css"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@yaireo/tagify@3.18.1/dist/tagify.css"></script>
   <style type="text/css">
     div.tooltip {
       position: absolute;
@@ -12,7 +12,8 @@
       border-radius: 5px;
       padding: 5px;
     }
-  
+
+    /* To deal with resizing the plot as the user changes the web page */
     .svg-container {
       display: inline-block;
       position: relative;
@@ -32,25 +33,38 @@
       width: 100%;
       height: 100%;
     }
+
+    /* For the legend */
+    .legend {
+      font-size: 16px;
+      cursor: default; /* So mouse remains a pointer over text */
+    }
+    .legend:hover {
+      fill: #ec008c;
+      font-weight: "bold"
+    }
+    rect {
+      stroke-width: 2;
+    }
   </style>
 </head>
 <body>
     <meta charset="utf-8">
     <!-- Search box for entering search terms -->
-    <input id="search" style="visibility: hidden;" placeholder="Single Word Search Term"/>
+    <input id="search" style="visibility: hidden;" placeholder="Enter Search Terms"/>
     <!-- Create a div where the graph will take place -->
     <div id="my_dataviz"></div>
 
     <!-- tagify -->
-    <script src="//cdn.jsdelivr.net/npm/@yaireo/tagify@2.31.2/dist/tagify.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/@yaireo/tagify@3.18.1/dist/tagify.min.js"></script>
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
     <script type="text/javascript">
 
     // Get the screen aspect ratio. The 0.9 is to deal with all the screen chrome that might be
     // present so we don't loose the bottom.
-    aspect_screen = screen.height/screen.width * 0.85
-    aspect_inner = window.innerHeight/window.innerWidth * 0.85
+    var aspect_screen = screen.height/screen.width * 0.85
+    var aspect_inner = window.innerHeight/window.innerWidth * 0.85
 
     if (aspect_inner < aspect_screen) {
       aspect = aspect_inner
@@ -87,27 +101,29 @@
     // State of the page:
     // 0 - Mouse over should work as normal
     // 1 - Valid search term: mouse over disabled.
-    state = 0
+    var state = 0
 
     // if this list is empty, display tool tips for everything. Otherwise, just for
     // the index in this list
-    tool_tip_only_documents = []
+    var tool_tip_only_documents = []
 
-    // append the svg object to the body of the page
-      var svg = d3.select("#my_dataviz")
-        .append("div")
-        // Container class to make it responsive to rescaling
-        .classed("svg-container", true)
-        .style("padding-bottom", aspect*100 + "%")
-        // The parent for the SVG
-        .append("svg")
-        .attr("viewBox", "0 0 " + canvas_width + " " + canvas_height)
-        .attr("preserveAspectRatio", "xMinYMax  slice")
-        // Class to make it responsive.
-        .classed("svg-content-responsive", true)
-        .append("g")
-        .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+    // append the svg object to the body of the page the top level
+    // svg container. THis is a little more involved than most plots because
+    // we want some very basic resize functionality built in.
+    var svg = d3.select("#my_dataviz")
+      .append("div")
+      // Container class to make it responsive to rescaling
+      .classed("svg-container", true)
+      .style("padding-bottom", aspect*100 + "%")
+      // The parent for the SVG
+      .append("svg")
+      .attr("viewBox", "0 0 " + canvas_width + " " + canvas_height)
+      .attr("preserveAspectRatio", "xMinYMax  slice")
+      // Class to make it responsive.
+      .classed("svg-content-responsive", true)
+      .append("g")
+      .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
 
     // Names of the frontiers for people like me who can't keep track of them all:
     var frontiers = {
@@ -122,6 +138,35 @@
       "TF": "Theory",
       "UF": "Underground Facilities"
     }
+
+    // Get the legend up
+    var legendRectSize = 18;
+    var legendSpacing = 4;
+    var legend = svg.selectAll('.legend')
+      .data(color.domain())
+      .enter()
+        .append('g')
+        .attr('class', 'legend')
+        .attr('transform', function (d, i) {
+          var height = legendRectSize + legendSpacing;
+          var offset = height * color.domain().length / 2;
+          var horz = legendSpacing;
+          var vert = i * height;
+          return 'translate(' + horz + ',' + vert + ')';
+        })
+        .on("click", legend_box_clicked)
+        ;
+
+    legend.append('rect')
+      .attr('width', legendRectSize)
+      .attr('height', legendRectSize)
+      .style('fill', color)
+      .style('stroke', color);
+
+    legend.append('text')
+      .attr('x', legendRectSize + legendSpacing)
+      .attr('y', legendRectSize - legendSpacing)
+      .text(function(d) { return frontiers[d]; });
 
     //Read the scatter plot data
     d3.csv("../data/loi-data.csv", function(data) {
@@ -159,7 +204,7 @@
       // Call back when we mouse over an area - high light everything from that area
       var highlight = function(d) {
 
-        selected_area = d.area
+        var selected_area = d.area
 
         // Get a little blob of info text
         if (tool_tip_only_documents.length == 0 || tool_tip_only_documents.indexOf(d.index) >= 0){
@@ -224,7 +269,6 @@
 
     // Load in the term data to power search
     d3.json('../data/term_data.json', function (data) {
-
       d3.select("#search")
         .style("visibility", "visible")
         .each(function () {
@@ -255,7 +299,7 @@
       };
 
       function lookup_keyword() {
-        ids = [];
+        ids = {};
         first = true;
         for (word of tagify.value) {
           if (first) {
@@ -307,5 +351,19 @@
       };
     })
 
+    // Add a tag to the list of tags
+    function legend_box_clicked(d) {
+      var remove_tags = []
+      for (t of tagify.value) {
+        var tag_name = t.value
+        if (tag_name.startsWith('area_')) {
+          if (tag_name != 'area_' + d) {
+            remove_tags.push(tag_name)
+          }
+        }
+      }
+      tagify.removeTag(remove_tags)
+      tagify.addTags(['area_' + d])
+    }
     </script>
 </body>
