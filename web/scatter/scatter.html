@@ -12,7 +12,8 @@
       border-radius: 5px;
       padding: 5px;
     }
-  
+
+    /* To deal with resizing the plot as the user changes the web page */
     .svg-container {
       display: inline-block;
       position: relative;
@@ -31,6 +32,14 @@
       left: 0;
       width: 100%;
       height: 100%;
+    }
+
+    /* For the legend */
+    .legend {
+      font-size: 16px;
+    }
+    rect {
+      stroke-width: 2;
     }
   </style>
 </head>
@@ -121,6 +130,38 @@
       "RF": "Rare Processes and Precision",
       "TF": "Theory",
       "UF": "Underground Facilities"
+    }
+
+    // Get the legend up
+    var legendRectSize = 18;
+    var legendSpacing = 4;
+    var legend = svg.selectAll('.legend')
+      .data(color.domain())
+      .enter()
+        .append('g')
+        .attr('class', 'legend')
+        .attr('transform', function (d, i) {
+          var height = legendRectSize + legendSpacing;
+          var offset = height * color.domain().length / 2;
+          var horz = legendSpacing;
+          var vert = i * height;
+          return 'translate(' + horz + ',' + vert + ')';
+        })
+        ;
+
+    legend.append('rect')
+      .attr('width', legendRectSize)
+      .attr('height', legendRectSize)
+      .style('fill', color)
+      .style('stroke', color);
+
+    legend.append('text')
+      .attr('x', legendRectSize + legendSpacing)
+      .attr('y', legendRectSize - legendSpacing)
+      .text(function(d) { return frontiers[d]; });
+
+    function enter_legend_box(d) {
+      console.log('got mouse enter')
     }
 
     //Read the scatter plot data
