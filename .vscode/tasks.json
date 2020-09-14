@@ -6,7 +6,7 @@
         {
             "label": "jekyll serve (docker)",
             "type": "shell",
-            "command": "docker run --rm -it -v ${workspaceFolder}:/gitrepo -v ${workspaceFolder}/vendor/bundle:/usr/local/bundle -p 4000:4000 jekyll/jekyll:4.0 bash \"cd /gitrepo; jekyll serve",
+            "command": "docker run --rm -it -v ${workspaceFolder}:/gitrepo -v ${workspaceFolder}/vendor/bundle:/usr/local/bundle -p 4000:4000 jekyll/jekyll:4.0 bash",
             "problemMatcher": []
         }
     ]
