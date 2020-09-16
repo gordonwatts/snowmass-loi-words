@@ -1,0 +1,319 @@
+total_documents: 1566
+unique_documents: 1522
+clean_documents: 1507
+date_of_download: September 1, 2020
+duplicates:
+  - main_name: SNOWMASS21-AF0-015
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF0-015.pdf
+    duplicates:
+    - name: SNOWMASS21-TF0-AF0-006
+      link: https://www.snowmass21.org/docs/files/summaries/TF/SNOWMASS21-TF0-AF0-006.pdf
+  - main_name: SNOWMASS21-AF0_AF0-215
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF0_AF0-215.pdf
+    duplicates:
+    - name: SNOWMASS21-AF7_AF0_Martina_Martinello-217
+      link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF7_AF0_Martina_Martinello-217.pdf
+  - main_name: SNOWMASS21-AF1_AF0-061
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF1_AF0-061.pdf
+    duplicates:
+    - name: SNOWMASS21-AF3_AF6-EF1_EF4_Litvinenko-062
+      link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF3_AF6-EF1_EF4_Litvinenko-062.pdf
+    - name: SNOWMASS21-EF0_EF0-AF0_AF0_Vladimir_Litvinenko-036
+      link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF0_EF0-AF0_AF0_Vladimir_Litvinenko-036.pdf
+    - name: SNOWMASS21-EF1_EF0-050
+      link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF1_EF0-050.pdf
+    - name: SNOWMASS21-EF1_EF4_Litvinenko-052
+      link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF1_EF4_Litvinenko-052.pdf
+  - main_name: SNOWMASS21-AF1_AF7-140
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF1_AF7-140.pdf
+    duplicates:
+    - name: SNOWMASS21-AF7_AF0_Mentink-141
+      link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF7_AF0_Mentink-141.pdf
+  - main_name: SNOWMASS21-AF3-011
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF3-011.pdf
+    duplicates:
+    - name: SNOWMASS21-AF4_AF0_Jingyu_Tang-021
+      link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF4_AF0_Jingyu_Tang-021.pdf
+  - main_name: SNOWMASS21-AF3_AF4-EF0_EF0_Bhat-237
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF3_AF4-EF0_EF0_Bhat-237.pdf
+    duplicates:
+    - name: SNOWMASS21-EF0_EF0-AF4_AF3_Bhat-239
+      link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF0_EF0-AF4_AF3_Bhat-239.pdf
+  - main_name: SNOWMASS21-AF4_AF0-069
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF4_AF0-069.pdf
+    duplicates:
+    - name: SNOWMASS21-AF4_AF0_Peter_McIntyre-024
+      link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF4_AF0_Peter_McIntyre-024.pdf
+  - main_name: SNOWMASS21-AF4_AF7_xuqj@ihep.ac.cn-022
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF4_AF7_xuqj@ihep.ac.cn-022.pdf
+    duplicates:
+    - name: SNOWMASS21-AF7-EF9-003
+      link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF7-EF9-003.pdf
+  - main_name: SNOWMASS21-AF5_AF0-RF5_RF0_Prebys-071
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF5_AF0-RF5_RF0_Prebys-071.pdf
+    duplicates:
+    - name: SNOWMASS21-AF5_AF0-RF5_RF0_Prebys2-203
+      link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF5_AF0-RF5_RF0_Prebys2-203.pdf
+  - main_name: SNOWMASS21-AF6_AF0-128
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF6_AF0-128.pdf
+    duplicates:
+    - name: SNOWMASS21-AF6_AF6_Lumpkin-131
+      link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF6_AF6_Lumpkin-131.pdf
+    - name: SNOWMASS21-AF7_AF7_Lumpkin-129
+      link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF7_AF7_Lumpkin-129.pdf
+  - main_name: SNOWMASS21-AF7_AF6-123
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF7_AF6-123.pdf
+    duplicates:
+    - name: SNOWMASS21-AF7_AF6-124
+      link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF7_AF6-124.pdf
+  - main_name: SNOWMASS21-CF1_CF0_Sumit_Ghosh-011
+    main_link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF1_CF0_Sumit_Ghosh-011.pdf
+    duplicates:
+    - name: SNOWMASS21-CF1_CF0_Sumit_Ghosh-119
+      link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF1_CF0_Sumit_Ghosh-119.pdf
+  - main_name: SNOWMASS21-CF2-IF2-002
+    main_link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF2-IF2-002.pdf
+    duplicates:
+    - name: SNOWMASS21-IF1-CF2-003
+      link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-IF1-CF2-003.pdf
+  - main_name: SNOWMASS21-CF2_CF0-IF1_IF0-259
+    main_link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF2_CF0-IF1_IF0-259.pdf
+    duplicates:
+    - name: SNOWMASS21-CF2_CF0-IF1_IF0_Speller-260
+      link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF2_CF0-IF1_IF0_Speller-260.pdf
+  - main_name: SNOWMASS21-CF2_CF0-IF7_IF0-134
+    main_link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF2_CF0-IF7_IF0-134.pdf
+    duplicates:
+    - name: SNOWMASS21-CF2_CF0-IF7_IF0_Sumita_Ghosh-135
+      link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF2_CF0-IF7_IF0_Sumita_Ghosh-135.pdf
+  - main_name: SNOWMASS21-CF3_CF7-TF0_TF0-014
+    main_link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF3_CF7-TF0_TF0-014.pdf
+    duplicates:
+    - name: SNOWMASS21-CF3_CF7-TF0_TF0_Sukanya_Chakrabarti-015
+      link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF3_CF7-TF0_TF0_Sukanya_Chakrabarti-015.pdf
+  - main_name: SNOWMASS21-CF7_CF0-192
+    main_link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF7_CF0-192.pdf
+    duplicates:
+    - name: SNOWMASS21-CF7_CF0_Andrea_Albert-196
+      link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF7_CF0_Andrea_Albert-196.pdf
+  - main_name: SNOWMASS21-CF7_CF3-IF2_IF0_Tom_Diehl-094
+    main_link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF7_CF3-IF2_IF0_Tom_Diehl-094.pdf
+    duplicates:
+    - name: SNOWMASS21-IF2_IF0-CF7_CF3-090
+      link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-IF2_IF0-CF7_CF3-090.pdf
+    - name: SNOWMASS21-IF2_IF0-CF7_CF3_Tom_Diehl-091
+      link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-IF2_IF0-CF7_CF3_Tom_Diehl-091.pdf
+  - main_name: SNOWMASS21-CommF1_CommF6_brian_nord-055
+    main_link: https://www.snowmass21.org/docs/files/summaries/CommF/SNOWMASS21-CommF1_CommF6_brian_nord-055.pdf
+    duplicates:
+    - name: SNOWMASS21-CommF1_CommF6_brian_nord_new-056
+      link: https://www.snowmass21.org/docs/files/summaries/CommF/SNOWMASS21-CommF1_CommF6_brian_nord_new-056.pdf
+  - main_name: SNOWMASS21-CommF4_CommF0-057
+    main_link: https://www.snowmass21.org/docs/files/summaries/CommF/SNOWMASS21-CommF4_CommF0-057.pdf
+    duplicates:
+    - name: SNOWMASS21-CommF4_CommF0-058
+      link: https://www.snowmass21.org/docs/files/summaries/CommF/SNOWMASS21-CommF4_CommF0-058.pdf
+  - main_name: SNOWMASS21-CommF4_CommF5_Wibig-025
+    main_link: https://www.snowmass21.org/docs/files/summaries/CommF/SNOWMASS21-CommF4_CommF5_Wibig-025.pdf
+    duplicates:
+    - name: SNOWMASS21-CompF4_CompF5_Wibig-029
+      link: https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF4_CompF5_Wibig-029.pdf
+  - main_name: SNOWMASS21-CompF0_CompF0-011
+    main_link: https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF0_CompF0-011.pdf
+    duplicates:
+    - name: SNOWMASS21-CompF0_CompF0-012
+      link: https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF0_CompF0-012.pdf
+  - main_name: SNOWMASS21-CompF0_CompF0_Meagher-042
+    main_link: https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF0_CompF0_Meagher-042.pdf
+    duplicates:
+    - name: SNOWMASS21-CompF5_CompF4_Meagher-043
+      link: https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF5_CompF4_Meagher-043.pdf
+  - main_name: SNOWMASS21-CompF2_CompF0-NF6_NF0-TF11_TF5-039
+    main_link: https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF2_CompF0-NF6_NF0-TF11_TF5-039.pdf
+    duplicates:
+    - name: SNOWMASS21-CompF2_CompF0-NF6_NF0-TF11_TF5_Kehfei_Liu-040
+      link: https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF2_CompF0-NF6_NF0-TF11_TF5_Kehfei_Liu-040.pdf
+  - main_name: SNOWMASS21-CompF6_CompF0_Christian_Bauer-117
+    main_link: https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF6_CompF0_Christian_Bauer-117.pdf
+    duplicates:
+    - name: SNOWMASS21-TF10_TF0_Christian_Bauer-084
+      link: https://www.snowmass21.org/docs/files/summaries/TF/SNOWMASS21-TF10_TF0_Christian_Bauer-084.pdf
+  - main_name: SNOWMASS21-CompF6_CompF0_Christian_Bauer-120
+    main_link: https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF6_CompF0_Christian_Bauer-120.pdf
+    duplicates:
+    - name: SNOWMASS21-TF10_TF0_Christian_Bauer-083
+      link: https://www.snowmass21.org/docs/files/summaries/TF/SNOWMASS21-TF10_TF0_Christian_Bauer-083.pdf
+  - main_name: SNOWMASS21-EF0-016
+    main_link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF0-016.pdf
+    duplicates:
+    - name: SNOWMASS21-EF0-NF0-RF0-TF0-IF0-CompF0-017
+      link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF0-NF0-RF0-TF0-IF0-CompF0-017.pdf
+  - main_name: SNOWMASS21-EF0_EF0_Vachon-245
+    main_link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF0_EF0_Vachon-245.pdf
+    duplicates:
+    - name: SNOWMASS21-EF4_EF0_Vachon-246
+      link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF4_EF0_Vachon-246.pdf
+  - main_name: SNOWMASS21-EF2_EF1-106
+    main_link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF2_EF1-106.pdf
+    duplicates:
+    - name: SNOWMASS21-EF2_EF1-218
+      link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF2_EF1-218.pdf
+  - main_name: SNOWMASS21-EF5_EF6-146
+    main_link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF5_EF6-146.pdf
+    duplicates:
+    - name: SNOWMASS21-TF5_TF6-040
+      link: https://www.snowmass21.org/docs/files/summaries/TF/SNOWMASS21-TF5_TF6-040.pdf
+  - main_name: SNOWMASS21-IF0_IF0_Terrano-083
+    main_link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-IF0_IF0_Terrano-083.pdf
+    duplicates:
+    - name: SNOWMASS21-IF0_IF0_Terrano-089
+      link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-IF0_IF0_Terrano-089.pdf
+  - main_name: SNOWMASS21-IF1_IF2-CF1_CF0-147
+    main_link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-IF1_IF2-CF1_CF0-147.pdf
+    duplicates:
+    - name: SNOWMASS21-IF1_IF2-CF1_CF0_Nam-148
+      link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-IF1_IF2-CF1_CF0_Nam-148.pdf
+  - main_name: SNOWMASS21-IF3_IF0-106
+    main_link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-IF3_IF0-106.pdf
+    duplicates:
+    - name: SNOWMASS21-IF3_IF0_N._Fourches-107
+      link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-IF3_IF0_N._Fourches-107.pdf
+  - main_name: SNOWMASS21-IF3_IF6_David_R_Winn-033
+    main_link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-IF3_IF6_David_R_Winn-033.pdf
+    duplicates:
+    - name: SNOWMASS21-IF3_IF6_David_R_Winn-034
+      link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-IF3_IF6_David_R_Winn-034.pdf
+  - main_name: SNOWMASS21-NF0_NF0-087
+    main_link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF0_NF0-087.pdf
+    duplicates:
+    - name: SNOWMASS21-NF1_NF3_Jeremy_Wolcott-088
+      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF1_NF3_Jeremy_Wolcott-088.pdf
+  - main_name: SNOWMASS21-NF0_NF0_Nick_Solomey-009
+    main_link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF0_NF0_Nick_Solomey-009.pdf
+    duplicates:
+    - name: SNOWMASS21-NF0_NF0_Nick_Solomey-012
+      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF0_NF0_Nick_Solomey-012.pdf
+  - main_name: SNOWMASS21-NF3_NF0-112
+    main_link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF3_NF0-112.pdf
+    duplicates:
+    - name: SNOWMASS21-NF3_NF0-RF6_RF0-CF1_CF0_Animesh_Chatterjee-119
+      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF3_NF0-RF6_RF0-CF1_CF0_Animesh_Chatterjee-119.pdf
+  - main_name: SNOWMASS21-NF5_NF3-RF4_RF0-CF1_CF0-IF1_IF2-UF3_UF0-181
+    main_link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF5_NF3-RF4_RF0-CF1_CF0-IF1_IF2-UF3_UF0-181.pdf
+    duplicates:
+    - name: SNOWMASS21-NF5_NF3-RF4_RF0-CF1_CF0-IF1_IF2-UF3_UF0_Speller-182
+      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF5_NF3-RF4_RF0-CF1_CF0-IF1_IF2-UF3_UF0_Speller-182.pdf
+  - main_name: SNOWMASS21-NF5_NF4-084
+    main_link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF5_NF4-084.pdf
+    duplicates:
+    - name: SNOWMASS21-NF5_NF4_Baudis-085
+      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF5_NF4_Baudis-085.pdf
+  - main_name: SNOWMASS21-NF6_NF2-EF0_EF0-AF2_AF4-077
+    main_link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF6_NF2-EF0_EF0-AF2_AF4-077.pdf
+    duplicates:
+    - name: SNOWMASS21-NF6_NF2-EF0_EF0-AF2_AF4_Kenneth_Long-082
+      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF6_NF2-EF0_EF0-AF2_AF4_Kenneth_Long-082.pdf
+    - name: SNOWMASS21-NF6_NF2_Kenneth_Long-076
+      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF6_NF2_Kenneth_Long-076.pdf
+  - main_name: SNOWMASS21-NF6_NF3-141
+    main_link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF6_NF3-141.pdf
+    duplicates:
+    - name: SNOWMASS21-NF6_NF3_Snowden-Ifft-142
+      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF6_NF3_Snowden-Ifft-142.pdf
+  - main_name: SNOWMASS21-RF5_RF0-AF5_AF0_J_Pasternak-096
+    main_link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-AF5_AF0_J_Pasternak-096.pdf
+    duplicates:
+    - name: SNOWMASS21-RF5_RF0-AF5_AF0_Pasternak-057
+      link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-AF5_AF0_Pasternak-057.pdf
+  - main_name: SNOWMASS21-RF5_RF0-IF4_IF0-039
+    main_link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-IF4_IF0-039.pdf
+    duplicates:
+    - name: SNOWMASS21-RF5_RF0-IF4_IF0_Gianantonio_Pezzullo-040
+      link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-IF4_IF0_Gianantonio_Pezzullo-040.pdf
+    - name: SNOWMASS21-RF5_RF0-IF4_IF0_Gianantonio_Pezzullo-041
+      link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-IF4_IF0_Gianantonio_Pezzullo-041.pdf
+    - name: SNOWMASS21-RF5_RF0-IF4_IF0_Gianantonio_Pezzullo-042
+      link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-IF4_IF0_Gianantonio_Pezzullo-042.pdf
+  - main_name: SNOWMASS21-TF4_TF0-069
+    main_link: https://www.snowmass21.org/docs/files/summaries/TF/SNOWMASS21-TF4_TF0-069.pdf
+    duplicates:
+    - name: SNOWMASS21-TF4_TF0_Trodden-Hinterbichler-070
+      link: https://www.snowmass21.org/docs/files/summaries/TF/SNOWMASS21-TF4_TF0_Trodden-Hinterbichler-070.pdf
+updates:
+  - main_name: SNOWMASS21-AF2_AF0_pellico-158
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF2_AF0_pellico-158.pdf
+    duplicates:
+    - name: SNOWMASS21-RF6_RF0_pellico-029
+      link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF6_RF0_pellico-029.pdf
+  - main_name: SNOWMASS21-AF4_AF0_Peter_McIntyre-239
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF4_AF0_Peter_McIntyre-239.pdf
+    duplicates:
+    - name: SNOWMASS21-EF9_EF0_Peter_McIntyre-238
+      link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF9_EF0_Peter_McIntyre-238.pdf
+  - main_name: SNOWMASS21-CF1_CF0_Giovanetti-172
+    main_link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF1_CF0_Giovanetti-172.pdf
+    duplicates:
+    - name: SNOWMASS21-IF8_IF9_Westerdale-141
+      link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-IF8_IF9_Westerdale-141.pdf
+    - name: SNOWMASS21-NF5_NF4-RF4_RF0_Savarese-127
+      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF5_NF4-RF4_RF0_Savarese-127.pdf
+  - main_name: SNOWMASS21-CF7_CF0_Kristi_L_Engel-227
+    main_link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF7_CF0_Kristi_L_Engel-227.pdf
+    duplicates:
+    - name: SNOWMASS21-CF7_CF0_Kristi_L_Engel-235
+      link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF7_CF0_Kristi_L_Engel-235.pdf
+  - main_name: SNOWMASS21-CF7_CF1-NF4_NF3-TF11_TF0_Mauricio_Bustamante-048
+    main_link: https://www.snowmass21.org/docs/files/summaries/CF/SNOWMASS21-CF7_CF1-NF4_NF3-TF11_TF0_Mauricio_Bustamante-048.pdf
+    duplicates:
+    - name: SNOWMASS21-NF3_NF2-CF7_CF1-TF9_TF8_Katori-073
+      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF3_NF2-CF7_CF1-TF9_TF8_Katori-073.pdf
+  - main_name: SNOWMASS21-CommF2_CommF3_Sudhir_Malik-009
+    main_link: https://www.snowmass21.org/docs/files/summaries/CommF/SNOWMASS21-CommF2_CommF3_Sudhir_Malik-009.pdf
+    duplicates:
+    - name: SNOWMASS21-CommF2_CommF4_Sudhir_Malik-004
+      link: https://www.snowmass21.org/docs/files/summaries/CommF/SNOWMASS21-CommF2_CommF4_Sudhir_Malik-004.pdf
+  - main_name: SNOWMASS21-EF2_EF0-136
+    main_link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF2_EF0-136.pdf
+    duplicates:
+    - name: SNOWMASS21-EF2_EF0_Yu_Gao-251
+      link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF2_EF0_Yu_Gao-251.pdf
+  - main_name: SNOWMASS21-IF2_IF10-NF10_NF0-UF1_UF3-144
+    main_link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-IF2_IF10-NF10_NF0-UF1_UF3-144.pdf
+    duplicates:
+    - name: SNOWMASS21-NF10_NF0-CF0_CF7_Kowalski-101
+      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF10_NF0-CF0_CF7_Kowalski-101.pdf
+  - main_name: SNOWMASS21-NF10_NF4-CF7_CF1-TF11_TF0_Darren_Grant-105
+    main_link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF10_NF4-CF7_CF1-TF11_TF0_Darren_Grant-105.pdf
+    duplicates:
+    - name: SNOWMASS21-NF10_NF0-CF0_CF7_Kowalski-101
+      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF10_NF0-CF0_CF7_Kowalski-101.pdf
+  - main_name: SNOWMASS21-NF2_NF9_Further_PROSPECT-I_Science-168
+    main_link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF2_NF9_Further_PROSPECT-I_Science-168.pdf
+    duplicates:
+    - name: SNOWMASS21-NF2_NF9_Future_PROSPECT-II_Science-169
+      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF2_NF9_Future_PROSPECT-II_Science-169.pdf
+  - main_name: SNOWMASS21-RF5_RF0-IF4_IF0-039
+    main_link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-IF4_IF0-039.pdf
+    duplicates:
+    - name: SNOWMASS21-RF5_RF0-IF4_IF0_Franco_Spinella-044
+      link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-IF4_IF0_Franco_Spinella-044.pdf
+  - main_name: SNOWMASS21-RF5_RF0-IF4_IF0_Gianantonio_Pezzullo-040
+    main_link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-IF4_IF0_Gianantonio_Pezzullo-040.pdf
+    duplicates:
+    - name: SNOWMASS21-RF5_RF0-IF4_IF0_Franco_Spinella-044
+      link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-IF4_IF0_Franco_Spinella-044.pdf
+  - main_name: SNOWMASS21-RF5_RF0-IF4_IF0_Gianantonio_Pezzullo-041
+    main_link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-IF4_IF0_Gianantonio_Pezzullo-041.pdf
+    duplicates:
+    - name: SNOWMASS21-RF5_RF0-IF4_IF0_Franco_Spinella-044
+      link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-IF4_IF0_Franco_Spinella-044.pdf
+  - main_name: SNOWMASS21-RF5_RF0-IF4_IF0_Gianantonio_Pezzullo-042
+    main_link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-IF4_IF0_Gianantonio_Pezzullo-042.pdf
+    duplicates:
+    - name: SNOWMASS21-RF5_RF0-IF4_IF0_Franco_Spinella-044
+      link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-IF4_IF0_Franco_Spinella-044.pdf
+  - main_name: SNOWMASS21-TF10_TF0-CompF6_CompF0_Hank_Lamm-041
+    main_link: https://www.snowmass21.org/docs/files/summaries/TF/SNOWMASS21-TF10_TF0-CompF6_CompF0_Hank_Lamm-041.pdf
+    duplicates:
+    - name: SNOWMASS21-TF10_TF0-CompF6_CompF0_Hank_Lamm-079
+      link: https://www.snowmass21.org/docs/files/summaries/TF/SNOWMASS21-TF10_TF0-CompF6_CompF0_Hank_Lamm-079.pdf
