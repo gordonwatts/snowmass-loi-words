@@ -9,19 +9,34 @@ from sklearn.feature_extraction.text import _check_stop_list
 
 loi_unpacked = "./loi-text" # Where we can write the output
 
+class filter_duplicates:
+    def __init__(self):
+        with open('../data/duplicates.txt', 'r') as f_read:
+            self._bad_files = lines = f_read.read().split('\n')
+    
+    def check(self, f: str) -> bool:
+        'Return true if the file is good, false if a duplicate'
+        return f not in self._bad_files
+
+    
+def text_file_info(remove_duplicates: bool = True) -> List[Tuple[str, str, str]]:
+    'Return (filename stem, area, full_path) for all files in the corpus'
+    loi = Path(loi_unpacked)
+    if remove_duplicates:
+        checker = filter_duplicates().check
+    else:
+        checker = lambda f: True
+    return ((f.stem, f.relative_to(loi).parent.name, str(f)) for f in Path(loi_unpacked).glob('**/*.txt') if checker(f.stem))
+
+
 def load_text() -> Dict[str, List[Tuple[str, str]]]:
     loi = Path(loi_unpacked)
-    all_files = ((f.relative_to(loi).parent.name, f) for f in Path(loi_unpacked).glob('**/*.txt'))
+    all_files = ((f[1], Path(f[2])) for f in text_file_info())
     files_by_area = defaultdict(list)
     for area, file in all_files:
         files_by_area[area].append((file.stem, file.read_text()))
     return files_by_area
 
-
-def text_file_info() -> List[Tuple[str, str, str]]:
-    'Return (filename stem, area, full_path) for all files in the corpus'
-    loi = Path(loi_unpacked)
-    return ((f.stem, f.relative_to(loi).parent.name, str(f)) for f in Path(loi_unpacked).glob('**/*.txt'))
 
 # Extra stop words - these should always be lower case!
 extra_stopwords = ['high', 'energy', 'physics', 'beam', 'beams', 
