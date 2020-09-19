@@ -241,7 +241,7 @@ title: Snowmass LOI's All At Once
         var selected_area = d.area
 
         // Get a little blob of info text
-        if (tool_tip_only_documents.length == 0 || tool_tip_only_documents.indexOf(d.index) >= 0){
+        if (tool_tip_only_documents.length == 0 || tool_tip_only_documents.indexOf(d.index) >= 0) {
           if (d3.event.pageX < (window.innerWidth/2)) {
             w_left = d3.event.pageX + 20
           } else {
@@ -253,10 +253,10 @@ title: Snowmass LOI's All At Once
             w_top = d3.event.pageY - 250
           }
 
-        max_height = canvas_height - w_top
+          max_height = canvas_height - w_top
 
           Tooltip
-            .html(d.name + "<br>Click for PDF<br>Frontier: " + frontiers[d.area] + "<br>" + d.summary)
+            .html(d.name + "<br><b>Frontier:</b> " + frontiers[d.area] + "<br><b>Title:</b> " + d.title + "<br><b>Abstract:</b> " + d.abstract)
             .style("opacity", 1)
             .style("display", "inline")
             .style("left", w_left + "px")
