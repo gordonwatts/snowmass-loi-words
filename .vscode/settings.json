@@ -2,6 +2,7 @@
     "debug.javascript.usePreview": true,
     "cSpell.words": [
         "COVID",
+        "Caclulate",
         "LOI's",
         "PDF's",
         "Snowmass",
@@ -11,6 +12,10 @@
         "setosa",
         "stopwords",
         "virginica",
-        "wordcloud"
+        "wordcloud",
+        "xmax",
+        "xmin",
+        "ymax",
+        "ymin"
     ]
 }
