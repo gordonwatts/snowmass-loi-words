@@ -14,6 +14,8 @@ title: Snowmass LOI's All At Once
       border-radius: 5px;
       padding: 5px;
       width: 4in;
+      height: fit-content;
+      overflow: hidden;
     }
 
     /* To deal with resizing the plot as the user changes the web page */
@@ -211,13 +213,26 @@ title: Snowmass LOI's All At Once
 
         // Get a little blob of info text
         if (tool_tip_only_documents.length == 0 || tool_tip_only_documents.indexOf(d.index) >= 0){
+          if (d3.event.pageX < (window.innerWidth/2)) {
+            w_left = d3.event.pageX + 20
+          } else {
+            w_left = d3.event.pageX - 4*96 - 20
+          }
+          if (d3.event.pageY < (window.innerHeight/2)) {
+            w_top = d3.event.pageY - 50
+          } else {
+            w_top = d3.event.pageY - 250
+          }
+
+        max_height = canvas_height - w_top
+
           Tooltip
             .html(d.name + "<br>Click for PDF<br>Frontier: " + frontiers[d.area] + "<br>" + d.summary)
             .style("opacity", 1)
             .style("display", "inline")
-            .style("left", (d3.event.pageX + 20) + "px")
-            // NB: offset in y so it doesn't cover the data point and trigger a mouseout event
-            .style("top", (d3.event.pageY - 50) + "px");
+            .style("left", w_left + "px")
+            .style("top", w_top + "px")
+            .style("max-height", max_height + "px");
         }
 
         if (state == 0) {
