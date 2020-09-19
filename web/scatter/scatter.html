@@ -176,9 +176,38 @@ title: Snowmass LOI's All At Once
     //Read the scatter plot data
     d3.csv("../data/loi-data.csv", function(data) {
 
+      // Caclulate the bounds of the data.
+      xmin = Infinity
+      ymin = Infinity
+      xmax = -Infinity
+      ymax = -Infinity
+
+      for (d of data) {
+        x = Number(d.x)
+        y = Number(d.y)
+        if (x < xmin) {
+          xmin = x
+        }
+        if (x > xmax) {
+          xmax = x
+        }
+        if (y < ymin) {
+          ymin = y
+        }
+        if (y > ymax) {
+          ymax = y
+        }
+      }
+
+      xmax = xmax * 1.10
+      ymax = ymax * 1.10
+
+      xmin = xmin * 1.10
+      ymin = ymin * 1.10
+
       // Add X axis
       var x = d3.scaleLinear()
-        .domain([-0.4, 0.6])
+        .domain([xmin, xmax])
         .range([ 0, plot_width ]);
       svg.append("g")
         .attr("transform", "translate(0," + plot_height + ")")
@@ -186,7 +215,7 @@ title: Snowmass LOI's All At Once
 
       // Add Y axis
       var y = d3.scaleLinear()
-        .domain([-0.4, 0.6])
+        .domain([ymin, ymax])
         .range([ plot_height, 0]);
       svg.append("g")
         .call(d3.axisLeft(y));
