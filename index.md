@@ -6,9 +6,9 @@ The official repository can be found from the [main website](https://snowmass21.
 
 ## LOI's by frontier
 
-The number of LOI's per self declared frontier:
+The number of LOI's per frontier (as declared by the submitter):
 
-![The number of LOI's submitted in each Frontier](assets/images/lois-by-frontier.png)
+[![The number of LOI's submitted in each Frontier](assets/images/lois-by-frontier.png)](assets/images/lois-by-frontier.svg)
 
 ## Detailed Information
 
