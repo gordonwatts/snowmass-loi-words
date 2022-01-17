@@ -8,7 +8,7 @@ This is a Jekyll site. Adding and changing follows all the usual rules. As far a
 
 ## Running locally
 
-To run locally you need to build the website first, in Jekyll. There is a `docker` container that will do this for you. If you use Visual Studio Code as your editor, there is a task configured that will start up a docker container, build your website, and serve it on port `4000`.
+To run locally you need to build the website first, in Jekyll. There is a `docker` container that will do this for you. If you use Visual Studio Code as your editor, there is a task configured that will start up a docker container, build your website, and serve it on port `4000`. Once you have the prompt use the command `cd /gitrepo/web` and `jekyll serve` to start the webserver. The first time you run this it will take a while as it downloads everything from the web.
 
 Note that on Windows, the auto-build feature may not work as the file systems do not always talk to each other properly.
 

@@ -17,5 +17,6 @@
         "xmin",
         "ymax",
         "ymin"
-    ]
+    ],
+    "python.formatting.provider": "black"
 }

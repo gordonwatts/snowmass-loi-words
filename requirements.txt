@@ -6,3 +6,4 @@ matplotlib
 sklearn
 pandas
 seaborn
+black
