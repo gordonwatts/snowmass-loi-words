@@ -4,6 +4,16 @@ Source for the website hosted here: [https://gordonwatts.github.io/snowmass-loi-
 
 ## Development
 
+### Running the notebooks
+
+1. Not all the packages work on Windows - you'll need to open this in WSL if you are developing in windows (use vscode, makes life *simple*).
+    - Tested and run against python 3.9.
+    - The PDF scanner needs `sudo apt install build-essential libpoppler-cpp-dev pkg-config python3-dev`
+1. `pip install -r requirements.txt`
+1. Download the extraction of the summaries (see the notebook `00`)
+
+### Website
+
 This is a Jekyll site. Adding and changing follows all the usual rules. As far as I know, nothing special is being done here.
 
 ## Running locally

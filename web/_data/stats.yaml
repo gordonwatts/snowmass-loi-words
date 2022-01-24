@@ -1,6 +1,6 @@
-total_documents: 1616
-unique_documents: 1560
-clean_documents: 1544
+total_documents: 1631
+unique_documents: 1574
+clean_documents: 1560
 date_of_download: September 16, 2020
 duplicates:
   - main_name: SNOWMASS21-AF0-015
@@ -8,6 +8,11 @@ duplicates:
     duplicates:
     - name: SNOWMASS21-TF0-AF0-006
       link: https://www.snowmass21.org/docs/files/summaries/TF/SNOWMASS21-TF0-AF0-006.pdf
+  - main_name: SNOWMASS21-AF0_AF0-091
+    main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF0_AF0-091.pdf
+    duplicates:
+    - name: SNOWMASS21-AF2_AF0_Evans-257
+      link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF2_AF0_Evans-257.pdf
   - main_name: SNOWMASS21-AF0_AF0-215
     main_link: https://www.snowmass21.org/docs/files/summaries/AF/SNOWMASS21-AF0_AF0-215.pdf
     duplicates:
@@ -175,8 +180,8 @@ duplicates:
     duplicates:
     - name: SNOWMASS21-TF5_TF6-040
       link: https://www.snowmass21.org/docs/files/summaries/TF/SNOWMASS21-TF5_TF6-040.pdf
-  - main_name: SNOWMASS21-EF9_EF6_EF10_EF5-NF6_NF3_NF10-RF6_RF0-CF7_CF0-AF5_AF0-UF1_UF2_TF10_ForwardPhysicsFacility-193
-    main_link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF9_EF6_EF10_EF5-NF6_NF3_NF10-RF6_RF0-CF7_CF0-AF5_AF0-UF1_UF2_TF10_ForwardPhysicsFacility-193.pdf
+  - main_name: SNOWMASS21-EF9_EF6_EF10_EF5-NF6_NF3_NF10-RF6_RF0-CF7_CF0-AF5_AF0-UF1_UF2_TF10_Calorimeter-193
+    main_link: https://www.snowmass21.org/docs/files/summaries/IF/SNOWMASS21-EF9_EF6_EF10_EF5-NF6_NF3_NF10-RF6_RF0-CF7_CF0-AF5_AF0-UF1_UF2_TF10_Calorimeter-193.pdf
     duplicates:
     - name: SNOWMASS21-RF5_RF0_David_Hitlin-073
       link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0_David_Hitlin-073.pdf
@@ -284,11 +289,6 @@ updates:
     duplicates:
     - name: SNOWMASS21-CommF2_CommF4_Sudhir_Malik-004
       link: https://www.snowmass21.org/docs/files/summaries/CommF/SNOWMASS21-CommF2_CommF4_Sudhir_Malik-004.pdf
-  - main_name: SNOWMASS21-CompF6_CompF0-TF10_TF0_Osborn-115
-    main_link: https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF6_CompF0-TF10_TF0_Osborn-115.pdf
-    duplicates:
-    - name: SNOWMASS21-CompF6_CompF0-TF10_TF0_Osborn-135
-      link: https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF6_CompF0-TF10_TF0_Osborn-135.pdf
   - main_name: SNOWMASS21-EF2_EF0-136
     main_link: https://www.snowmass21.org/docs/files/summaries/EF/SNOWMASS21-EF2_EF0-136.pdf
     duplicates:
@@ -304,11 +304,6 @@ updates:
     duplicates:
     - name: SNOWMASS21-NF10_NF0-CF0_CF7_Kowalski-101
       link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF10_NF0-CF0_CF7_Kowalski-101.pdf
-  - main_name: SNOWMASS21-NF2_NF9_Further_PROSPECT-I_Science-168
-    main_link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF2_NF9_Further_PROSPECT-I_Science-168.pdf
-    duplicates:
-    - name: SNOWMASS21-NF2_NF9_Future_PROSPECT-II_Science-169
-      link: https://www.snowmass21.org/docs/files/summaries/NF/SNOWMASS21-NF2_NF9_Future_PROSPECT-II_Science-169.pdf
   - main_name: SNOWMASS21-RF5_RF0-IF4_IF0-039
     main_link: https://www.snowmass21.org/docs/files/summaries/RF/SNOWMASS21-RF5_RF0-IF4_IF0-039.pdf
     duplicates:
