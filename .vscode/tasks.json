@@ -8,6 +8,12 @@
             "type": "shell",
             "command": "docker run --rm -it -v ${workspaceFolder}:/gitrepo -v ${workspaceFolder}/vendor/bundle:/usr/local/bundle -p 4000:4000 jekyll/jekyll:4.0 bash",
             "problemMatcher": []
-        }
+        },
+        {
+            "label": "jekyll serve (dev container)",
+            "type": "shell",
+            "command": "cd web && bundle install && bundle exec jekyll serve",
+            "problemMatcher": []
+        },
     ]
 }

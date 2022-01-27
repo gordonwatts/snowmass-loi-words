@@ -34,3 +34,4 @@ This repo is setup with a `devcontainer`. When you open it, use the small little
 
 * Have the `loi` data located at the same level as the work space, and in a directory called `snowmass-lois`.
 * Use the default python installation when asked for a jupyter kernel
+* Use the vscode task to serve jekyll in the devcontainer. Note that vscode doesn't seem to always detect the outgoing port, you might need to click on the "ports forwarded" icon and add 4000 by hand.
