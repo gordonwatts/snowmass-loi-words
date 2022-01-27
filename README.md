@@ -25,3 +25,12 @@ Note that on Windows, the auto-build feature may not work as the file systems do
 To debug you need to first start the server. Then look for the site profile in the debugger (will start it on the default browser on your machine, if all goes well). One odd thing: Jekyll creates a copy of your website, so if you need to debug things, you'll have to look in `web/_site/xxx` for the file in which to set breakpoints.
 
 All the above has been tested on Windows. If you want to update this for other OS', please do!
+
+## Using the devContainer
+
+`vscode` has a very nice feature called `devcontainers` which builds the development environment in a container, and then does all dev work from `vscode` in that container.
+
+This repo is setup with a `devcontainer`. When you open it, use the small little green icon in the lower left hand corner to bring up the list of remote development options. Click on the `reopen in dev container` option. 
+
+* Have the `loi` data located at the same level as the work space, and in a directory called `snowmass-lois`.
+* Use the default python installation when asked for a jupyter kernel
