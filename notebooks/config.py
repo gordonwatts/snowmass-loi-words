@@ -62,7 +62,6 @@ extra_stopwords = ['high', 'energy', 'physics', 'beam', 'beams',
                    'com',
                    'figure',
                    'date',
-                   
                   ]
 
 # Clustering Config
